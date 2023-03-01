@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "bungcip.better-toml",
+        "ms-python.python",
+        "ms-python.isort"
+    ]
+}
