@@ -1,18 +1,19 @@
 [metadata]
-name = pyhina
-version = attr: pyhina.__version__
-description = Python package template project
-licence = MIT
+name = {{ project_name }}
+version = attr: {{ package_name }}.__version__
+description = {{ description }}
+license = {{ license }}
 
 [options]
-python_requires = >=3.8, <4
+python_requires = >={{ python_minimum }}, <4
 package = find:
 package_dir = 
     = src
-include_package_data = True
 
 install_requires = 
-    jinja2
+    {% for package in install_requires %}
+    {{ package }}
+    {% endfor %}
 
 [options.packages.find]
 where = src
@@ -22,7 +23,6 @@ develop =
     black
     flake8
     isort
-    pytest
 
 test = 
     tox
